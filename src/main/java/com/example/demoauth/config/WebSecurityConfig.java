@@ -19,7 +19,7 @@ import com.example.demoauth.security.ControleAcessoLoginFilter;
 import com.example.demoauth.security.JWTAuthenticationFilter;
 
 @Configuration
-@EnableWebSecurity(debug=true)
+@EnableWebSecurity()
 @EnableGlobalMethodSecurity(prePostEnabled=true, securedEnabled=true, jsr250Enabled=true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
