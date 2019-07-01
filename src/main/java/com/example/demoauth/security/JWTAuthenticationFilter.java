@@ -34,7 +34,7 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
 		
 		ControleAcessoClient caClient = new ControleAcessoClient(config.getHost(), config.getLogin(), config.getPassword());
 		try {
-			boolean atualizarAcesso = caClient.atualizarAcesso(165L, null, authentication.getSessionId());
+			boolean atualizarAcesso = caClient.atualizarAcesso(config.getApplicationId(), null, authentication.getSessionId());
 			
 			if(!atualizarAcesso) {
 				throw new AuthenticationException("Sessão expirada") {};

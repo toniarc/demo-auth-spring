@@ -34,7 +34,7 @@ public class ControleAcessoLoginFilter extends AbstractAuthenticationProcessingF
 			throw new AuthenticationException("Sessao expirada") {};
 		}
 
-		return getAuthenticationManager().authenticate(new ControleAcessoAuthenticationToken(dto.getPassaporte(), dto.getIdAplicacao()));
+		return getAuthenticationManager().authenticate(new ControleAcessoAuthenticationToken(dto.getPassaporte()));
 	}
 
 	@Override

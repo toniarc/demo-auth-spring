@@ -14,6 +14,9 @@ public class AppConfiguration {
 	
 	@Value("${prodepa.controleacesso.ws.password}" )
 	private String password;
+	
+	@Value("${prodepa.controleacesso.ws.applicationId}" )
+	private Long applicationId;
 
 	public String getHost() {
 		return host;
@@ -38,6 +41,13 @@ public class AppConfiguration {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	public Long getApplicationId() {
+		return applicationId;
+	}
+
+	public void setApplicationId(Long applicationId) {
+		this.applicationId = applicationId;
+	}
 	
 }

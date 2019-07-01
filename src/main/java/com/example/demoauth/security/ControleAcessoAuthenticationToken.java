@@ -17,10 +17,9 @@ public class ControleAcessoAuthenticationToken extends AbstractAuthenticationTok
 	private Long idAplicacao;
 	private UsuarioDto usuarioDto;
 	
-	public ControleAcessoAuthenticationToken(String sessionId, Long idAplicacao) {
+	public ControleAcessoAuthenticationToken(String sessionId) {
 		super(null);
 		this.sessionId = sessionId;
-		this.idAplicacao = idAplicacao;
 	}
 
 	public ControleAcessoAuthenticationToken(UsuarioDto usuarioDto , Collection<? extends GrantedAuthority> authorities) {

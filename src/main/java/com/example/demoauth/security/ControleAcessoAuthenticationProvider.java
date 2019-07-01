@@ -3,7 +3,6 @@ package com.example.demoauth.security;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -31,7 +30,7 @@ public class ControleAcessoAuthenticationProvider implements AuthenticationProvi
 		UsuarioDto usuarioDto = null;
 		
 		try {
-			usuarioDto = caClient.autorizar(165L, cookieAuthToken.getSessionId());
+			usuarioDto = caClient.autorizar(config.getApplicationId()	, cookieAuthToken.getSessionId());
 			String[] roles = usuarioDto.getOperacoes().stream().map( r -> "ROLE_" + r).toArray(String[]::new);
 			List<GrantedAuthority> authorityList = AuthorityUtils.createAuthorityList(roles);
 			return new ControleAcessoAuthenticationToken(usuarioDto, authorityList);
